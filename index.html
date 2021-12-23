@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,800;1,300;1,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- - Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
+
+### Neutral
+
+- Dark Grayish Red: hsl(0, 6%, 24%)
+
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      line-height: 1;
+      font-family: 'Josefin Sans', sans-serif;
+      color: hsl(0, 36%, 70%);
+      font-size: 16px;
+    }
+    main{
+      display: grid;
+      grid-template-columns: 375px;
+      justify-content: center;
+    }
+    section{
+      background-color: rgb(245, 236, 243);
+    }
+    /* section 1 */
+    section:nth-child(1){
+      padding:20px 30px 20px 30px;
+      text-align: left;
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      grid-row: 1fr;
+      justify-items:start;
+      align-items: center;
+      
+    }
+    section:nth-child(1) span:nth-child(1){
+      width: 20px;
+      display: inline-block;
+      height: 20px;
+      grid-row: 1/3;
+      border: 1px solid hsl(0, 36%, 70%);
+      border-radius: 50%;
+
+    } 
+    section:nth-child(1) span:nth-child(2) ,section:nth-child(1) span:nth-child(3){
+      font-size: 10px;
+      color:hsl(0, 6%, 24%) ;
+      font-weight: 800;
+      letter-spacing: 2px;
+
+    }
+    /* section 2 */
+    
+    /* section3 */
+    section:nth-child(3){
+      padding: 30px;
+      text-align: center;
+    }
+    section:nth-child(3){
+      
+      box-sizing: content-box;
+      padding: 40px 0;
+    }
+    section:nth-child(3) h1{
+      font-size: 32px;
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      padding:0px 50px ;
+      font-style: italic;
+    }
+    section:nth-child(3) h1:nth-child(2){
+      font-style: normal;
+      margin-bottom: 10px;
+      color:hsl(0, 6%, 24%)  ;
+      font-weight: 500;
+      
+    }
+    section:nth-child(3) p{
+      line-height: 1.6;
+      padding: 0 30px;
+      font-size: 15px;
+    }
+    input::placeholder{
+      color:hsl(0, 36%, 70%);
+      padding: 4px;
+      opacity: 0.5;
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      
+    }
+    .input{
+      padding:20px 30px;
+      position: relative;
+    }
+    input:focus{
+      outline: none;
+      border:2px solid hsl(0, 47%, 77%);
+    }
+   
+    
+    
+    input{
+      width: 100%;
+      padding: 10px 15px;
+      display: flex;
+      position: relative;
+      border: 1px solid hsl(0, 46%, 86%);
+      border-radius: 20px;
+      background-color: transparent;
+      color: hsl(0, 6%, 24%);
+      
+      
+    }
+    .wrong{
+      border: 1px solid hsl(0, 93%, 68%);
+    }
+    button{
+      position: absolute;
+      top:20px;
+      right: 30px;
+      
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      background: transparent;
+      outline: none;
+      border:0;
+      border-radius: 20px;
+      background: linear-gradient(to left ,#ee7c7c, hsl(0, 63%, 80%));
+      box-shadow: inset 0 0 0 1px hsl(0, 64%, 73%),0 0 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+      
+      
+    }
+    button:hover{
+      transform: scaleX(1.2);
+      background: linear-gradient(to left ,#e7b4b4, hsl(0, 63%, 80%));
+      box-shadow: 0 2px  5px 0 rgba(0, 0, 0, 0.144);
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+    svg{
+      
+      width: 20px;
+      height: 20px;
+  
+      stroke: white;
+    }
+    .input p{
+      text-align: left;
+      color:hsl(0, 93%, 68%) ;
+      
+      
+      
+      
+    }
+    .svg2 {
+      background:hsl(0, 93%, 68%);
+      
+    
+      position:absolute;
+      top: 25px;
+      right: 100px;
+      border-radius: 50%;
+      display: none;
+    }
+    .b{
+      
+      opacity: 0;
+    }
+    .d{
+      opacity: 1;
+      display: block;
+    }
+    .d-n {
+      display: none;
+    }
+    @media (min-width:1000px){
+      main{
+        grid-template-columns: 500px 288px;
+        width: auto;
+        grid-template-rows: 500px;
+        justify-content: start;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 200px;
+        
+      }
+      img:nth-child(1){
+        display: block;
+        
+        width: 100%;
+
+      }
+      img:nth-child(2){
+        display: none;
+        grid-row: 1/3;
+        
+        
+      }
+      section:nth-child(3){
+        grid-column: 1;
+        grid-row: 1;
+        position: relative;
+        top: 50px;
+      }
+      section:nth-child(1){
+        grid-column: 1;
+        grid-row: 1;
+      }
+      section:nth-child(1),section:nth-child(3){
+        width: 500px;
+        justify-self: flex-end;
+        text-align: left;
+      }
+      section:nth-child(3) h1{
+      font-size: 32px;
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      padding:0px 30px ;
+      font-style: italic;
+    }
+      
+    }
+   
+
+
+
+
+  
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <span>&nbsp;</span>
+      <span>BASE</span>
+      <span>APPAREL</span>
+    </section>
+    <section>
+      <img src="images/hero-desktop.jpg" alt="" class="d-n">
+      <img src="images/hero-mobile.jpg" alt="">
+    </section>
+    <section>
+      <h1>We're</h1>
+      <h1>coming soon</h1>
+      <p>  Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      <div class="input ">
+        <input type="text" placeholder="Email Address">
+        <button type:'button' onclick="getInput()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg></button>
+        <p class="visible b ">pls provide a valid email</p>
+        <img src="images/icon-error.svg" alt="" class="svg2 ">
+      </div>
+    </section>
+    
+  </main>
+    
+    <script>
+      let getInput = function(){
+        let email = document.querySelector('input').value
+        console.log(email)
+        console.log(email.includes('@gmail.com'))
+        if(email.includes('@gmail.com')){
+          console.log('true')
+          document.querySelector('input').classList.remove('wrong')
+          document.querySelector('.svg2').classList.remove('d')
+          document.querySelector('.visible').classList.remove('d')
+
+        }else{
+          document.querySelector('input').classList.add('wrong')
+          document.querySelector('.svg2').classList.add('d')
+          document.querySelector('.visible').classList.add('d')
+        }
+      }
+    </script>
+    
+    
+  </body>
+  </html>
